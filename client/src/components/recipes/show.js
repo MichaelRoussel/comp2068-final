@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 
 function Show(props) {
+  console.log("inside show");
   const [recipe, setRecipe] = useState([]);
 
   useEffect(() => {

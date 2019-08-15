@@ -6,7 +6,7 @@ function Index() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    Axios.get("/api/recipes")
+    Axios.get("/api/recipes/")
       .then(result => setRecipes(result.data))
       .catch(err => console.error(err));
   }, []);
@@ -32,14 +32,14 @@ function Index() {
             {recipes.map(recipe => (
               <tr key={recipe._id}>
                 <td>
-                  <Link to={`/recipes/${recipe._id}`}>{recipe.title}</Link>
+                  <Link to={`/${recipe._id}`}>{recipe.title}</Link>
                 </td>
                 <td>{recipe.ingredients}</td>
                 <td>{recipe.difficulty}</td>
                 <td>{recipe.type}</td>
                 <td>
-                  <Link to={`/recipes/${recipe._id}/edit`}>edit </Link>|
-                  <Link to={`/recipes/${recipe._id}/destroy`}> delete</Link>
+                  <Link to={`/${recipe._id}/edit`}>edit </Link>|
+                  <Link to={`/${recipe._id}/destroy`}> delete</Link>
                 </td>
               </tr>
             ))}

@@ -7,7 +7,7 @@ exports.index = (req, res) => {
 };
 
 
-exports.show = (req, res) => {
+exports.show = (req, res) => { 
   Recipe.findOne({
     _id: req.params.id
   })

@@ -9,7 +9,7 @@ function New() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    Axios.post("/api/recipes", inputs)
+    Axios.post("/api/recipes/", inputs)
       .then(resp => setRedirect(true))
       .catch(err => console.error(err));
   }
@@ -26,7 +26,7 @@ function New() {
     });
   }
 
-  if (redirect) return <Redirect to="/recipes" />;
+  if (redirect) return <Redirect to="/" />;
 
   return (
     <div className="container">
